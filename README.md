@@ -8,7 +8,17 @@ this application keeps track of reported defects in projects.
 - Executor user takes new task to fix errors.
 - Producer checks the work done.
 
-## Installation
+## Docker installation
+
+Clone application to /app
+```sh
+cd /app
+docker-compose up -d mongo
+docker-compose up --build installer
+docker-compose up -d server
+```
+
+## Typical installation
 
 #### Install environment
 - [Node.js](https://nodejs.org)
@@ -20,6 +30,7 @@ Clone application to /app
 cd /app
 npm install
 NODE_ENV=development node console/install
+NODE_ENV=development node console/start
 ```
 
 #### Windows
@@ -29,27 +40,23 @@ cd c:/app
 npm install
 set NODE_ENV=development
 node console/install
-```
-
-## Start app
-
-#### Linux
-```sh
-cd /app
-NODE_ENV=development node console/start
-```
-
-#### Windows
-```sh
-cd c:/app
-set NODE_ENV=development
 node console/start
 ```
-  
+
 ## Usage
  
 Web interface: [http://localhost:3000](http://localhost:3000)
 
+Sign in as task executor:
+```sh
+Email: b@b.b
+Password: 123456
+```
+Sign in as task producer:
+```sh
+Email: s@s.s
+Password: 123456
+```
 Sign in as administrator:
 ```sh
 Email: a@a.a
