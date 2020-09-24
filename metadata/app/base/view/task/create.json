@@ -1,0 +1,32 @@
+{
+  "label": "Create task",
+  "description": "Deault task creation",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "project",
+      "eagerLoading": true,
+      "orderNumber": 10
+    },
+    {
+      "name": "priority",
+      "orderNumber": 20
+    },
+    {
+      "name": "summary",
+      "orderNumber": 30
+    },
+    {
+      "name": "description",
+      "orderNumber": 40
+    },
+    {
+      "name": "documents",
+      "orderNumber": 50
+    },
+    {
+      "name": "author",
+      "orderNumber": 60
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "label": "Created by me",
+  "description": "Tasks created by me",
+  "filter": {
+    "author": "$user.meta.base.member"
+  },
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "_state",
+      "orderNumber": 10
+    },
+    {
+      "name": "project",
+      "eagerLoading": true,
+      "orderNumber": 20
+    },
+    {
+      "name": "summary",
+      "orderNumber": 30
+    },
+    {
+      "name": "priority",
+      "orderNumber": 40
+    },
+    {
+      "name": "assignee",
+      "orderNumber": 80
+    },
+    {
+      "name": "_createdAt",
+      "orderNumber": 120
+    }
+  ]
+}

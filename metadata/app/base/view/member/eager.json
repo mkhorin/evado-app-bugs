@@ -1,0 +1,11 @@
+{
+  "label": "Eager view",
+  "description": "Default eager view",
+  "readOnly": true,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    }
+  ]
+}

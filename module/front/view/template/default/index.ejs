@@ -1,0 +1,34 @@
+<%
+layout(_view.get('_layout/content'));
+
+script('front/script/Front.js');
+script('front/script/Form.js');
+script('front/script/Page.js');
+script('front/script/Task.js');
+script('front/script/module.js');
+
+const dataUrl = _url('/api/base/data/');
+const fileUrl = _url('/api/base/file/');
+const metaUrl = _url('/api/base/meta/');
+
+const isGuest = _controller.user.isGuest();
+const isExecutor = !isGuest && _controller.user.hasAssignment('executor');
+const isProducer = !isGuest && _controller.user.hasAssignment('producer');
+%>
+
+<%- include(_view.get('_part/signboard')) %>
+
+<div class="front"
+     data-guest="<%- isGuest %>"
+     data-executor="<%- isExecutor %>"
+     data-producer="<%- isProducer %>"
+     data-user="<%- _controller.user.getId() %>"
+     data-data-url="<%- dataUrl %>"
+     data-meta-url="<%- metaUrl %>">
+
+    <%- include('./_main', {isGuest, isExecutor, isProducer}) %>
+    <%- include('./_assignedTasks') %>
+    <%- include('./_assignedTask') %>
+    <%- include('./_createdTasks') %>
+    <%- include('./_createdTask') %>
+</div>

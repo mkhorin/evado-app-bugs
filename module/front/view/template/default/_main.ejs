@@ -1,0 +1,25 @@
+
+<div class="page" data-page="main" data-handler="MainPage">
+
+    <h1 data-t="">Bug Tracking System</h1>
+
+    <% if (isExecutor) { %>
+    <%- include(_view.get('default/_mainExecutor')) %>
+    <% } %>
+
+    <% if (isProducer) { %>
+    <%- include(_view.get('default/_mainProducer')) %>
+    <% } %>
+
+    <div class="mt30">
+        <% if (isGuest) { %>
+        <a href="auth/sign-in?returnUrl=/front" class="btn-primary btn" data-t="">Sign in or Register</a>
+        <% } else if (isExecutor) { %>
+        <button class="btn-primary btn" data-action="assignedTasks" data-t="meta">Assigned tasks</button>
+        <% } else if (isProducer) { %>
+        <button class="btn-primary btn" data-action="createdTasks" data-t="meta">Created tasks</button>
+        <% } else { %>
+        <div class="alert alert-warning" data-t="">Please login as executor or producer to continue</div>
+        <% } %>
+    </div>
+</div>

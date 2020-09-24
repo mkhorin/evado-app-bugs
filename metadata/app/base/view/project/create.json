@@ -1,0 +1,15 @@
+{
+  "label": "Create project",
+  "description": "Default creation view",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "description",
+      "orderNumber": 20
+    }
+  ]
+}

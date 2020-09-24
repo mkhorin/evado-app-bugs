@@ -1,0 +1,66 @@
+[
+  {
+    "_id": {
+      "$oid": "5f67f42be6bb2c17d00a5f95"
+    },
+    "_class": "member",
+    "_creator": {
+      "$oid": "5f56d7618ac98f19c85ac536"
+    },
+    "name": "Bob",
+    "user": {
+      "$oid": "5f56d7618ac98f19c85ac538"
+    },
+    "_createdAt": {
+      "$date": "2020-09-21T00:30:35.790Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f67f436e6bb2c17d00a5f96"
+    },
+    "_class": "member",
+    "_creator": {
+      "$oid": "5f56d7618ac98f19c85ac536"
+    },
+    "name": "Sara",
+    "user": {
+      "$oid": "5f56e1ee9bce881d94a560d1"
+    },
+    "_createdAt": {
+      "$date": "2020-09-21T00:30:46.578Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f67f8bce66546135086c6c3"
+    },
+    "_class": "member",
+    "_creator": {
+      "$oid": "5f56d7618ac98f19c85ac536"
+    },
+    "name": "Denis",
+    "user": {
+      "$oid": "5f56e2209bce881d94a560d6"
+    },
+    "_createdAt": {
+      "$date": "2020-09-21T00:50:04.923Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f67f8c6e66546135086c6c4"
+    },
+    "_class": "member",
+    "_creator": {
+      "$oid": "5f56d7618ac98f19c85ac536"
+    },
+    "name": "Tim",
+    "user": {
+      "$oid": "5f56d7618ac98f19c85ac53a"
+    },
+    "_createdAt": {
+      "$date": "2020-09-21T00:50:14.368Z"
+    }
+  }
+]

@@ -1,0 +1,186 @@
+[
+  {
+    "_id": {
+      "$oid": "5f67fe51e66546135086c6d6"
+    },
+    "_class": "work",
+    "_creator": {
+      "$oid": "5f56d7618ac98f19c85ac538"
+    },
+    "author": {
+      "$oid": "5f67f42be6bb2c17d00a5f95"
+    },
+    "task": {
+      "$oid": "5f67f7487d31c8131c793b57"
+    },
+    "duration": 30,
+    "description": "Nibh Vestibulum urna lacinia tellus sem justo Aenean Nam gravida amet",
+    "_createdAt": {
+      "$date": "2020-09-21T01:13:53.004Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f67fe89e66546135086c6d8"
+    },
+    "_class": "work",
+    "_creator": {
+      "$oid": "5f56d7618ac98f19c85ac538"
+    },
+    "author": {
+      "$oid": "5f67f42be6bb2c17d00a5f95"
+    },
+    "task": {
+      "$oid": "5f67f7487d31c8131c793b57"
+    },
+    "duration": 60,
+    "description": "None",
+    "_createdAt": {
+      "$date": "2020-09-21T01:14:49.891Z"
+    },
+    "_editor": {
+      "$oid": "5f56d7618ac98f19c85ac536"
+    },
+    "_updatedAt": {
+      "$date": "2020-09-22T11:27:53.394Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f6803fee66546135086c6ef"
+    },
+    "_class": "work",
+    "_creator": {
+      "$oid": "5f56e1ee9bce881d94a560d1"
+    },
+    "author": {
+      "$oid": "5f67f436e6bb2c17d00a5f96"
+    },
+    "task": {
+      "$oid": "5f67f7487d31c8131c793b57"
+    },
+    "duration": 15,
+    "description": "Suspendisse aliquet",
+    "_createdAt": {
+      "$date": "2020-09-21T01:38:06.423Z"
+    },
+    "_editor": {
+      "$oid": "5f56e1ee9bce881d94a560d1"
+    },
+    "_updatedAt": {
+      "$date": "2020-09-21T01:38:12.029Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f6a98a054addb1ad86d6261"
+    },
+    "_class": "work",
+    "_creator": {
+      "$oid": "5f56d7618ac98f19c85ac538"
+    },
+    "author": {
+      "$oid": "5f67f42be6bb2c17d00a5f95"
+    },
+    "task": {
+      "$oid": "5f67f6c47d31c8131c793b55"
+    },
+    "duration": 60,
+    "description": "Lorem pede vel sociis Nam turpis hendrerit Nam ut id morbi",
+    "_createdAt": {
+      "$date": "2020-09-23T00:36:48.488Z"
+    },
+    "_editor": {
+      "$oid": "5f56d7618ac98f19c85ac538"
+    },
+    "_updatedAt": {
+      "$date": "2020-09-23T00:37:50.431Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f6a98cf54addb1ad86d6262"
+    },
+    "_class": "work",
+    "_creator": {
+      "$oid": "5f56d7618ac98f19c85ac538"
+    },
+    "author": {
+      "$oid": "5f67f42be6bb2c17d00a5f95"
+    },
+    "task": {
+      "$oid": "5f67f6c47d31c8131c793b55"
+    },
+    "duration": 120,
+    "description": "Integer eget Nam",
+    "_createdAt": {
+      "$date": "2020-09-23T00:37:35.011Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f6ac78143569e11789bb0b1"
+    },
+    "_class": "work",
+    "_creator": {
+      "$oid": "5f56d7618ac98f19c85ac538"
+    },
+    "author": {
+      "$oid": "5f67f42be6bb2c17d00a5f95"
+    },
+    "task": {
+      "$oid": "5f67fbafe66546135086c6c9"
+    },
+    "duration": 210,
+    "description": "Dolor justo et sollicitudin dui mattis arcu",
+    "_createdAt": {
+      "$date": "2020-09-23T03:56:49.211Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f6ac7c743569e11789bb0b3"
+    },
+    "_class": "work",
+    "_creator": {
+      "$oid": "5f56e2209bce881d94a560d6"
+    },
+    "author": {
+      "$oid": "5f67f8bce66546135086c6c3"
+    },
+    "task": {
+      "$oid": "5f67fb75e66546135086c6c8"
+    },
+    "duration": 90,
+    "description": "In nec pellentesque Vestibulum",
+    "_createdAt": {
+      "$date": "2020-09-23T03:57:59.994Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5f6ac80a43569e11789bb0b5"
+    },
+    "_class": "work",
+    "_creator": {
+      "$oid": "5f56e2209bce881d94a560d6"
+    },
+    "author": {
+      "$oid": "5f67f8bce66546135086c6c3"
+    },
+    "task": {
+      "$oid": "5f67f7797d31c8131c793b58"
+    },
+    "duration": 45,
+    "description": "Elit felis volutpat nec Curabitur orci",
+    "_createdAt": {
+      "$date": "2020-09-23T03:59:06.510Z"
+    },
+    "_editor": {
+      "$oid": "5f56e2209bce881d94a560d6"
+    },
+    "_updatedAt": {
+      "$date": "2020-09-23T03:59:19.254Z"
+    }
+  }
+]

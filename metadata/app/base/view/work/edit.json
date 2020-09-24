@@ -1,0 +1,23 @@
+{
+  "description": "Default edit view",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "task",
+      "eagerLoading": true,
+      "orderNumber": 10
+    },
+    {
+      "name": "duration",
+      "orderNumber": 20
+    },
+    {
+      "name": "description",
+      "orderNumber": 30
+    },
+    {
+      "name": "author",
+      "orderNumber": 40
+    }
+  ]
+}

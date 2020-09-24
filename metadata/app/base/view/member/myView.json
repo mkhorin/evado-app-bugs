@@ -1,0 +1,29 @@
+{
+  "label": "My member",
+  "filter": {
+    "user": "$user"
+  },
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "user",
+      "orderNumber": 20
+    },
+    {
+      "name": "assignedTasks",
+      "orderNumber": 30
+    },
+    {
+      "name": "createdTasks",
+      "orderNumber": 40
+    },
+    {
+      "name": "workLog",
+      "orderNumber": 60
+    }
+  ]
+}

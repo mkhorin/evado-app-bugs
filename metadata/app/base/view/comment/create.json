@@ -1,0 +1,20 @@
+{
+  "label": "Create task",
+  "description": "Default creation view",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "task",
+      "eagerLoading": true,
+      "orderNumber": 10
+    },
+    {
+      "name": "text",
+      "orderNumber": 20
+    },
+    {
+      "name": "author",
+      "orderNumber": 30
+    }
+  ]
+}

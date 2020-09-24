@@ -1,0 +1,19 @@
+{
+  "label": "Task comments",
+  "description": "List of comments in a task",
+  "readOnly": true,
+  "attrs": [
+    {
+      "name": "author",
+      "orderNumber": 20
+    },
+    {
+      "name": "text",
+      "orderNumber": 30
+    },
+    {
+      "name": "_createdAt",
+      "orderNumber": 40
+    }
+  ]
+}

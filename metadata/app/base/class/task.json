@@ -1,0 +1,524 @@
+{
+  "abstract": false,
+  "description": "Defect statement",
+  "header": ".summary",
+  "label": "Task",
+  "attrs": [
+    {
+      "name": "_state",
+      "label": "State",
+      "type": "string",
+      "viewType": "state",
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 10,
+      "sortable": true,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "project",
+      "label": "Project",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "commands": [
+        "add",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "null",
+      "orderNumber": 20,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "project",
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "summary",
+      "label": "Summary",
+      "type": "string",
+      "description": "Defect brief statement",
+      "commonSearchable": true,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 30,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": true,
+      "trim": true,
+      "unique": false,
+      "rules": [
+        {
+          "type": "string",
+          "orderNumber": 10,
+          "max": 1024,
+          "min": 1
+        },
+        {
+          "type": "unique",
+          "orderNumber": 20,
+          "description": "Unique task summary within a project",
+          "filter": "project",
+          "ignoreCase": true
+        }
+      ]
+    },
+    {
+      "name": "priority",
+      "label": "Priority",
+      "type": "string",
+      "viewType": "radioList",
+      "description": "Task importance level",
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 40,
+      "sortable": true,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "enums": [
+        {
+          "items": [
+            {
+              "value": "low",
+              "text": "Low",
+              "orderNumber": 10
+            },
+            {
+              "value": "average",
+              "text": "Average",
+              "orderNumber": 20
+            },
+            {
+              "value": "high",
+              "text": "High",
+              "orderNumber": 30
+            },
+            {
+              "value": "critical",
+              "text": "Critical",
+              "orderNumber": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "text",
+      "description": "Defect description",
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 50,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": false,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false,
+      "rules": [
+        {
+          "type": "string",
+          "orderNumber": 10,
+          "max": 4096
+        }
+      ]
+    },
+    {
+      "name": "documents",
+      "label": "Documents",
+      "type": "ref",
+      "commands": [
+        "add",
+        "remove",
+        "create",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": true,
+      "onDelete": "null",
+      "orderNumber": 60,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "document",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "author",
+      "label": "Author",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "commands": [
+        "edit"
+      ],
+      "commonSearchable": false,
+      "createOnRead": false,
+      "defaultValue": "$user.meta.base.member",
+      "eagerLoading": true,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 70,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "member",
+      "readOnly": true,
+      "required": true,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "assignee",
+      "label": "Assignee",
+      "type": "ref",
+      "viewType": "relationSelect",
+      "commands": [
+        "add",
+        "remove",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": true,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "onDelete": "null",
+      "orderNumber": 80,
+      "sortable": false,
+      "sortableRelation": false,
+      "refClass": "member",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "comments",
+      "label": "Comments",
+      "type": "backref",
+      "commands": [
+        "create",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "createOnRead": true,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": true,
+      "orderNumber": 90,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "task",
+      "refClass": "comment",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "working",
+      "label": "Working",
+      "type": "backref",
+      "description": "Work log",
+      "commands": [
+        "create",
+        "edit"
+      ],
+      "commonSearchable": false,
+      "createOnRead": true,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "multiple": true,
+      "onDelete": "cascade",
+      "orderNumber": 100,
+      "sortable": false,
+      "sortableRelation": false,
+      "refAttr": "task",
+      "refClass": "work",
+      "readOnly": false,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "timeSpent",
+      "label": "Hours spent",
+      "type": "calc",
+      "description": "Сalculate the total time spent on a task",
+      "commonSearchable": false,
+      "createOnRead": false,
+      "extHint": "Total time of all work on the task",
+      "eagerLoading": false,
+      "escape": true,
+      "expression": [
+        "$duration",
+        [
+          "$+",
+          [
+            "$related",
+            "column",
+            "working",
+            {
+              "key": "duration"
+            }
+          ]
+        ],
+        "minutes",
+        "asHours"
+      ],
+      "hidden": false,
+      "history": false,
+      "multiple": false,
+      "orderNumber": 110,
+      "sortable": false,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    },
+    {
+      "name": "_createdAt",
+      "label": "Created at",
+      "type": "date",
+      "viewType": "localDatetime",
+      "commonSearchable": false,
+      "createOnRead": false,
+      "eagerLoading": false,
+      "escape": true,
+      "hidden": false,
+      "history": false,
+      "indexing": 1,
+      "multiple": false,
+      "orderNumber": 120,
+      "sortable": true,
+      "sortableRelation": false,
+      "readOnly": true,
+      "required": false,
+      "selectSearchable": false,
+      "trim": true,
+      "unique": false
+    }
+  ],
+  "groups": [
+    {
+      "name": "members",
+      "label": "Members",
+      "orderNumber": 110,
+      "readOnly": false,
+      "required": false,
+      "type": "columns"
+    },
+    {
+      "name": "assignee",
+      "label": "Assignee column",
+      "orderNumber": 1010,
+      "parent": "members",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "author",
+      "label": "Author column",
+      "orderNumber": 1020,
+      "parent": "members",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "tabs",
+      "label": "Tabs",
+      "orderNumber": 1030,
+      "readOnly": false,
+      "required": false,
+      "type": "tabs"
+    },
+    {
+      "name": "documents",
+      "label": "Documents",
+      "orderNumber": 1040,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "active": true,
+      "name": "comments",
+      "label": "Comments",
+      "orderNumber": 1050,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    },
+    {
+      "name": "workLog",
+      "label": "Work log",
+      "orderNumber": 1060,
+      "parent": "tabs",
+      "readOnly": false,
+      "required": false
+    }
+  ],
+  "states": [
+    {
+      "name": "new",
+      "label": "New",
+      "defaults": true,
+      "description": "Task is pending",
+      "readOnly": false
+    },
+    {
+      "name": "inProgress",
+      "label": "In progress",
+      "defaults": false,
+      "description": "Work in progress",
+      "readOnly": false
+    },
+    {
+      "name": "done",
+      "label": "Done",
+      "defaults": false,
+      "description": "Defect has been fixed but not verified",
+      "readOnly": false
+    },
+    {
+      "name": "closed",
+      "label": "Closed",
+      "defaults": false,
+      "description": "Task completed",
+      "readOnly": true
+    }
+  ],
+  "transitions": [
+    {
+      "name": "start",
+      "label": "Start working",
+      "nullStartState": false,
+      "startStates": [
+        "new",
+        "done"
+      ],
+      "finalState": "inProgress",
+      "condition": [
+        "NOT EMPTY",
+        "assignee"
+      ],
+      "orderNumber": 10
+    },
+    {
+      "name": "complete",
+      "label": "Complete",
+      "hint": "Put the task on pending review",
+      "nullStartState": false,
+      "startStates": [
+        "inProgress"
+      ],
+      "finalState": "done",
+      "orderNumber": 20
+    },
+    {
+      "name": "stop",
+      "label": "Stop working",
+      "nullStartState": false,
+      "startStates": [
+        "inProgress"
+      ],
+      "finalState": "new",
+      "orderNumber": 30
+    },
+    {
+      "name": "refuse",
+      "label": "Refuse",
+      "hint": "The defect is not fixed",
+      "nullStartState": false,
+      "startStates": [
+        "done"
+      ],
+      "finalState": "new",
+      "orderNumber": 40
+    },
+    {
+      "name": "close",
+      "label": "Close",
+      "description": "Finalize task after checking the bug fix",
+      "hint": "Finalize task",
+      "nullStartState": false,
+      "startStates": [
+        "done"
+      ],
+      "finalState": "closed",
+      "orderNumber": 50
+    },
+    {
+      "name": "reopen",
+      "label": "Reopen",
+      "nullStartState": false,
+      "startStates": [
+        "closed"
+      ],
+      "finalState": "new",
+      "orderNumber": 60
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "label": "Task works",
+  "description": "List of works in a task",
+  "readOnly": true,
+  "attrs": [
+    {
+      "name": "author",
+      "orderNumber": 20
+    },
+    {
+      "name": "duration",
+      "orderNumber": 30
+    },
+    {
+      "name": "description",
+      "orderNumber": 40
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "evado-app-bugs",
+  "version": "1.0.0",
+  "description": "Bug Tracking System built on Evado Framework",
+  "author": "Maxim Khorin",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.16.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkhorin/evado-app-bugs.git"
+  },
+  "dependencies": {
+    "evado": "~1.8.0",
+    "evado-api-base": "~1.8.0",
+    "evado-api-navigation": "~1.6.1",
+    "evado-meta-base": "~1.8.0",
+    "evado-meta-navigation": "~1.6.0",
+    "evado-module-account": "~1.6.1",
+    "evado-module-admin": "~1.8.0",
+    "evado-module-office": "~1.8.0",
+    "evado-module-studio": "~1.8.0",
+    "sharp": "~0.26.0"
+  },
+  "scripts": {
+    "start": "node console/start"
+  }
+}

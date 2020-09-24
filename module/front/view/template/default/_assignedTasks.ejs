@@ -1,0 +1,54 @@
+
+<div class="page" data-page="assignedTasks" data-handler="AssignedTasksPage">
+
+    <div class="page-head">
+        <ol class="breadcrumb">
+            <li><a href="#" data-action="main" data-t="">Main</a></li>
+            <li data-t="meta">Assigned tasks</li>
+        </ol>
+    </div>
+
+    <h1 data-t="">Tasks assigned to me</h1>
+
+    <div class="order-list loadable-container" data-handler="AssignedTaskList">
+
+        <template data-id="list">
+            <div class="task-items">{{items}}</div>
+        </template>
+
+        <template data-id="item">
+            <div class="task-item" data-id="{{_id}}">
+                <div class="cell">
+                    <label data-t="meta">State</label>
+                    <div class="value"><b data-t="meta">{{state}}</b></div>
+                </div>
+                <div class="cell">
+                    <div class="value">
+                        <a href="#" data-action="assignedTask">{{summary}}</a>
+                    </div>
+                </div>
+                <div class="cell">
+                    <label data-t="meta">Priority</label>
+                    <div class="value">
+                        <b data-t="meta">{{priority}}</b>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <%- include('./_pagination') %>
+
+        <template data-id="empty">
+            <div class="alert-warning alert">
+                <span data-t="">You have no tasks</span>
+            </div>
+        </template>
+
+        <template data-id="error">
+            <div class="alert-danger alert">{{text}}</div>
+        </template>
+
+        <div class="loadable-content"></div>
+        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
+    </div>
+</div>

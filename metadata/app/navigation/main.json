@@ -1,0 +1,50 @@
+{
+  "label": "Main",
+  "description": "Main section",
+  "nodes": [
+    {
+      "name": "assignedToMe",
+      "label": "Assigned to me",
+      "orderNumber": 10,
+      "class": "task",
+      "view": "listAssignedMe"
+    },
+    {
+      "name": "createdByMe",
+      "label": "Created by me",
+      "description": "Tasks created by me",
+      "orderNumber": 20,
+      "class": "task",
+      "view": "listCreatedMe"
+    },
+    {
+      "name": "newTasks",
+      "label": "New tasks",
+      "description": "List new tasks",
+      "orderNumber": 30,
+      "class": "task",
+      "view": "listNew",
+      "options": {
+        "separatorBefore": true
+      }
+    },
+    {
+      "name": "allTasks",
+      "label": "All tasks",
+      "description": "List all tasks",
+      "orderNumber": 40,
+      "class": "task",
+      "view": "list"
+    },
+    {
+      "name": "myMember",
+      "label": "My member",
+      "orderNumber": 50,
+      "class": "member",
+      "view": "myList",
+      "options": {
+        "separatorBefore": true
+      }
+    }
+  ]
+}

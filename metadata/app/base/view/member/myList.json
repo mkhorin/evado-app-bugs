@@ -1,0 +1,14 @@
+{
+  "label": "My member",
+  "editView": "myView",
+  "filter": {
+    "user": "$user"
+  },
+  "readOnly": true,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    }
+  ]
+}

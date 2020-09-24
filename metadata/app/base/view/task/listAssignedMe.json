@@ -1,0 +1,35 @@
+{
+  "label": "Assigned to me",
+  "description": "List assigned to me tasks",
+  "filter": {
+    "assignee": "$user.meta.base.member"
+  },
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "_state",
+      "orderNumber": 10
+    },
+    {
+      "name": "project",
+      "eagerLoading": true,
+      "orderNumber": 20
+    },
+    {
+      "name": "summary",
+      "orderNumber": 30
+    },
+    {
+      "name": "priority",
+      "orderNumber": 40
+    },
+    {
+      "name": "author",
+      "orderNumber": 70
+    },
+    {
+      "name": "_createdAt",
+      "orderNumber": 120
+    }
+  ]
+}

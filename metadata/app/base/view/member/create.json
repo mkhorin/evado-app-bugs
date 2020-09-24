@@ -1,0 +1,15 @@
+{
+  "label": "Create member",
+  "description": "Default creation view",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "name",
+      "orderNumber": 10
+    },
+    {
+      "name": "user",
+      "orderNumber": 20
+    }
+  ]
+}

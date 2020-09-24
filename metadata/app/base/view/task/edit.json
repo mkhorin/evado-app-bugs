@@ -1,0 +1,81 @@
+{
+  "label": "Edit task",
+  "description": "Default task edit",
+  "readOnly": false,
+  "attrs": [
+    {
+      "name": "_state",
+      "orderNumber": 10
+    },
+    {
+      "name": "project",
+      "eagerLoading": true,
+      "orderNumber": 15,
+      "readOnly": true
+    },
+    {
+      "name": "priority",
+      "orderNumber": 20
+    },
+    {
+      "name": "summary",
+      "orderNumber": 30
+    },
+    {
+      "name": "description",
+      "orderNumber": 40
+    },
+    {
+      "name": "documents",
+      "group": "documents",
+      "options": {
+        "css": "no-label"
+      },
+      "orderNumber": 45
+    },
+    {
+      "name": "author",
+      "group": "author",
+      "options": {
+        "cssLabel": "col-md-4",
+        "cssValue": "col-md-8"
+      },
+      "orderNumber": 50
+    },
+    {
+      "name": "assignee",
+      "group": "assignee",
+      "options": {
+        "cssLabel": "col-md-4",
+        "cssValue": "col-md-8"
+      },
+      "orderNumber": 60
+    },
+    {
+      "name": "comments",
+      "group": "comments",
+      "listView": "taskComments",
+      "options": {
+        "css": "no-label"
+      },
+      "orderNumber": 70
+    },
+    {
+      "name": "working",
+      "group": "workLog",
+      "listView": "taskWorks",
+      "options": {
+        "css": "no-label"
+      },
+      "orderNumber": 80
+    },
+    {
+      "name": "timeSpent",
+      "orderNumber": 110
+    },
+    {
+      "name": "_createdAt",
+      "orderNumber": 120
+    }
+  ]
+}
