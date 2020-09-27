@@ -48,6 +48,7 @@ Jam.I18n.meta = {
     'Created tasks': 'Созданные задачи',
     'Critical': 'Критический',
 
+    'Defect is not fixed': 'Дефект не исправлен',
     'Description': 'Описание',
     'Document': 'Документ',
     'Documents': 'Документы',
@@ -65,6 +66,7 @@ Jam.I18n.meta = {
 
     'Low': 'Низкий',
 
+    'Manager': 'Менеджер',
     'Member': 'Участник',
     'Members': 'Участники',
     'My member': 'Мой участник',
@@ -76,10 +78,9 @@ Jam.I18n.meta = {
     'Priority': 'Приоритет',
     'Project': 'Проект',
     'Projects': 'Проекты',
-    'Producer': 'Постановщик',
     'Put the task on pending review': 'Отправить задачу на проверку',
 
-    'Refuse': 'Отклонить',
+    'Reject': 'Отклонить',
     'Reopen': 'Переоткрыть',
 
     'Start working': 'Начать работу',
@@ -90,12 +91,11 @@ Jam.I18n.meta = {
     'Task': 'Задача',
     'Tasks': 'Задачи',
     'Text': 'Текст',
-    'The defect is not fixed': 'Дефект не исправлен',
     'Total time of all work on the task': 'Суммарное время работ над задачей',
 
     'User': 'Пользователь',
 
     'Work': 'Работа',
     'Work log': 'Журнал работ',
-    'Working': 'Работа'
+    'Works': 'Работы'
 };

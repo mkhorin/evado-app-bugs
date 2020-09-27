@@ -7,7 +7,7 @@ Object.assign(Jam.I18n.defaults, {
 
     'Main': 'Главная',
 
-    'Please login as executor or producer to continue': 'Для продолжения войдите как исполнитель или постановщик',
+    'Please login as executor or manager to continue': 'Для продолжения войдите как исполнитель или менеджер',
 
     'Reopen this task now?': 'Переоткрыть эту задачу?',
     'Return this task to work?': 'Вернуть эту задачу в работу?',

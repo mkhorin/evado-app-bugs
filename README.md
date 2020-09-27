@@ -1,12 +1,12 @@
 # Evado Bug Tracking System
 
-Built on [Evado Declarative Framework](https://github.com/mkhorin/evado) 
-this application keeps track of reported defects in projects.
+A tracking application of reported project defects
+built on [Evado Declarative Framework](https://github.com/mkhorin/evado).
 
-- Admin user creates a bug tracking project.
-- Producer user creates a task describing a project defect.
+- Admin user creates bug tracking projects.
+- Manager user creates tasks describing project defects.
 - Executor user takes new task to fix errors.
-- Producer checks the work done.
+- Manager checks the work done.
 
 ## Docker installation
 
@@ -47,12 +47,12 @@ node console/start
  
 Web interface: [http://localhost:3000](http://localhost:3000)
 
-Sign in as task executor:
+Sign in as executor:
 ```sh
 Email: b@b.b
 Password: 123456
 ```
-Sign in as task producer:
+Sign in as manager:
 ```sh
 Email: s@s.s
 Password: 123456

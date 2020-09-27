@@ -21,22 +21,13 @@ module.exports = {
             type: 'all'
         }
     }, {
-        description: 'Can create entities',
+        description: 'Can create comments, documents and works',
         roles: 'member',
         type: 'allow',
         actions: 'create',
         targets: {
             type: 'class',
             class: ['comment', 'document', 'work']
-        }
-    }, {
-        description: 'Can create task',
-        roles: 'producer',
-        type: 'allow',
-        actions: 'create',
-        targets: {
-            type: 'class',
-            class: 'task'
         }
     }, {
         description: 'Manage own data',
@@ -49,7 +40,7 @@ module.exports = {
         },
         rule: 'author'
     }, {
-        description: 'Manage own document',
+        description: 'Manage own documents',
         roles: 'member',
         type: 'allow',
         actions: ['read', 'update', 'delete'],
@@ -68,8 +59,17 @@ module.exports = {
             class: 'task'
         }
     }, {
-        description: 'Producer can change states of its own tasks',
-        roles: 'producer',
+        description: 'Manager can create tasks',
+        roles: 'manager',
+        type: 'allow',
+        actions: 'create',
+        targets: {
+            type: 'class',
+            class: 'task'
+        }
+    }, {
+        description: 'Manager can change states of its own tasks',
+        roles: 'manager',
         type: 'allow',
         actions: 'update',
         targets: {
@@ -88,8 +88,8 @@ module.exports = {
         },
         rule: 'assignee'
     }, {
-        description: 'Producer cannot start, stop and complete tasks',
-        roles: 'producer',
+        description: 'Manager cannot start, stop and complete tasks',
+        roles: 'manager',
         type: 'deny',
         actions: 'update',
         targets: {
@@ -98,14 +98,14 @@ module.exports = {
             transition: ['start', 'stop', 'complete']
         }
     }, {
-        description: 'Executor cannot refuse, close and reopen tasks',
+        description: 'Executor cannot reject, close and reopen tasks',
         roles: 'executor',
         type: 'deny',
         actions: 'update',
         targets: {
             type: 'transition',
             class: 'task',
-            transition: ['refuse', 'close', 'reopen']
+            transition: ['reject', 'close', 'reopen']
         }
     }],
 
@@ -149,9 +149,9 @@ module.exports = {
             label: 'Executor',
             description: 'Executor is appointed to solve tasks'
         },
-        'producer': {
-            label: 'Producer',
-            description: 'Producer creates, assigns and reviews tasks'
+        'manager': {
+            label: 'Manager',
+            description: 'Manager creates, assigns and reviews tasks'
         },
         'member': {
             label: 'Member',
@@ -169,7 +169,7 @@ module.exports = {
             description: 'Check user binding as object creator',
             config: {
                 Class: 'evado/component/meta/rbac/rule/UserRule',
-                attr: '_creator'
+                userAttr: '_creator'
             }
         },
         'assignee': {
@@ -177,7 +177,7 @@ module.exports = {
             description: 'Assignee checking via user binding to related object',
             config: {
                 Class: 'evado/component/meta/rbac/rule/RefUserRule',
-                attr: 'assignee'
+                refAttr: 'assignee'
             }
         },
         'author': {
@@ -185,15 +185,14 @@ module.exports = {
             description: 'Author checking via user binding to related object',
             config: {
                 Class: 'evado/component/meta/rbac/rule/RefUserRule',
-                attr: 'author'
+                refAttr: 'author'
             }
         },
         'user': {
             label: 'User',
             description: 'Check user binding',
             config: {
-                Class: 'evado/component/meta/rbac/rule/UserRule',
-                attr: 'user'
+                Class: 'evado/component/meta/rbac/rule/UserRule'
             }
         }
     },
@@ -203,8 +202,8 @@ module.exports = {
         'Adam': 'administrator',
         'Bob': ['executor', 'member'],
         'Denis': ['executor', 'member'],
-        'Sara': ['producer', 'member'],
-        'Tim': ['producer', 'member']
+        'Sara': ['manager', 'member'],
+        'Tim': ['manager', 'member']
     },
 
     // rules to auto-bind users to roles

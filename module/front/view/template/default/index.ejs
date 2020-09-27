@@ -13,7 +13,7 @@ const metaUrl = _url('/api/base/meta/');
 
 const isGuest = _controller.user.isGuest();
 const isExecutor = !isGuest && _controller.user.hasAssignment('executor');
-const isProducer = !isGuest && _controller.user.hasAssignment('producer');
+const isManager = !isGuest && _controller.user.hasAssignment('manager');
 %>
 
 <%- include(_view.get('_part/signboard')) %>
@@ -21,12 +21,12 @@ const isProducer = !isGuest && _controller.user.hasAssignment('producer');
 <div class="front"
      data-guest="<%- isGuest %>"
      data-executor="<%- isExecutor %>"
-     data-producer="<%- isProducer %>"
+     data-manager="<%- isManager %>"
      data-user="<%- _controller.user.getId() %>"
      data-data-url="<%- dataUrl %>"
      data-meta-url="<%- metaUrl %>">
 
-    <%- include('./_main', {isGuest, isExecutor, isProducer}) %>
+    <%- include('./_main', {isGuest, isExecutor, isManager}) %>
     <%- include('./_assignedTasks') %>
     <%- include('./_assignedTask') %>
     <%- include('./_createdTasks') %>

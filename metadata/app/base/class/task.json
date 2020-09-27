@@ -168,6 +168,7 @@
       "name": "documents",
       "label": "Documents",
       "type": "ref",
+      "description": "Document links are stored in a task.\nThus, the same document can be associated with different tasks.",
       "commands": [
         "add",
         "remove",
@@ -197,6 +198,7 @@
       "label": "Author",
       "type": "ref",
       "viewType": "relationSelect",
+      "description": "Link to member created a task. \nMember binded to system user is assigned by default",
       "commands": [
         "edit"
       ],
@@ -223,6 +225,7 @@
       "label": "Assignee",
       "type": "ref",
       "viewType": "relationSelect",
+      "description": "Link to member responsible for fixing a task.",
       "commands": [
         "add",
         "remove",
@@ -250,6 +253,7 @@
       "name": "comments",
       "label": "Comments",
       "type": "backref",
+      "description": "List of comments related to a task",
       "commands": [
         "create",
         "edit"
@@ -273,10 +277,10 @@
       "unique": false
     },
     {
-      "name": "working",
-      "label": "Working",
+      "name": "works",
+      "label": "Works",
       "type": "backref",
-      "description": "Work log",
+      "description": "List of works related to a task",
       "commands": [
         "create",
         "edit"
@@ -317,7 +321,7 @@
           [
             "$related",
             "column",
-            "working",
+            "works",
             {
               "key": "duration"
             }
@@ -343,6 +347,7 @@
       "label": "Created at",
       "type": "date",
       "viewType": "localDatetime",
+      "description": "A service attribute containing the creation date of an object.\nThe creation date view type is a local date because it depends on the time zone of a client viewing the date.",
       "commonSearchable": false,
       "createOnRead": false,
       "eagerLoading": false,
@@ -488,9 +493,9 @@
       "orderNumber": 30
     },
     {
-      "name": "refuse",
-      "label": "Refuse",
-      "hint": "The defect is not fixed",
+      "name": "reject",
+      "label": "Reject",
+      "hint": "Defect is not fixed",
       "nullStartState": false,
       "startStates": [
         "done"

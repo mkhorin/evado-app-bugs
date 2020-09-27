@@ -7,8 +7,8 @@
     <%- include(_view.get('default/_mainExecutor')) %>
     <% } %>
 
-    <% if (isProducer) { %>
-    <%- include(_view.get('default/_mainProducer')) %>
+    <% if (isManager) { %>
+    <%- include(_view.get('default/_mainManager')) %>
     <% } %>
 
     <div class="mt30">
@@ -16,10 +16,10 @@
         <a href="auth/sign-in?returnUrl=/front" class="btn-primary btn" data-t="">Sign in or Register</a>
         <% } else if (isExecutor) { %>
         <button class="btn-primary btn" data-action="assignedTasks" data-t="meta">Assigned tasks</button>
-        <% } else if (isProducer) { %>
+        <% } else if (isManager) { %>
         <button class="btn-primary btn" data-action="createdTasks" data-t="meta">Created tasks</button>
         <% } else { %>
-        <div class="alert alert-warning" data-t="">Please login as executor or producer to continue</div>
+        <div class="alert alert-warning" data-t="">Please login as executor or manager to continue</div>
         <% } %>
     </div>
 </div>

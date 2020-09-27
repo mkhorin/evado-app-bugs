@@ -8,6 +8,7 @@
       "label": "Task",
       "type": "ref",
       "viewType": "relationSelect",
+      "description": "Link to task",
       "commands": [
         "edit"
       ],
@@ -33,6 +34,7 @@
       "name": "duration",
       "label": "Duration",
       "type": "integer",
+      "description": "Time spent on work (minutes)",
       "commonSearchable": false,
       "createOnRead": false,
       "eagerLoading": false,
@@ -92,7 +94,7 @@
       "label": "Author",
       "type": "ref",
       "viewType": "relationSelect",
-      "description": "Work author",
+      "description": "Link to member",
       "commands": [
         "edit"
       ],

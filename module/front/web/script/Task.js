@@ -96,7 +96,7 @@ Front.CreatedTask = class CreatedTask extends Front.Task {
     init () {
         super.init();
         this.on('click', '[data-command="close"]', this.onClose.bind(this));
-        this.on('click', '[data-command="refuse"]', this.onRefuse.bind(this));
+        this.on('click', '[data-command="reject"]', this.onReject.bind(this));
         this.on('click', '[data-command="reopen"]', this.onReopen.bind(this));
     }
 
@@ -111,8 +111,8 @@ Front.CreatedTask = class CreatedTask extends Front.Task {
         this.transit('close');
     }
 
-    onRefuse () {
-        Jam.dialog.confirm('Return this task to work?').then(() => this.transit('refuse'));
+    onReject () {
+        Jam.dialog.confirm('Return this task to work?').then(() => this.transit('reject'));
     }
 
     onReopen () {
