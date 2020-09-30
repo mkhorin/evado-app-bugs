@@ -14,7 +14,7 @@ module.exports = {
         }
     }, {
         description: 'Can read all data',
-        roles: 'member',
+        roles: 'employee',
         type: 'allow',
         actions: 'read',
         targets: {
@@ -22,7 +22,7 @@ module.exports = {
         }
     }, {
         description: 'Can create comments, documents and works',
-        roles: 'member',
+        roles: 'employee',
         type: 'allow',
         actions: 'create',
         targets: {
@@ -31,7 +31,7 @@ module.exports = {
         }
     }, {
         description: 'Manage own data',
-        roles: 'member',
+        roles: 'employee',
         type: 'allow',
         actions: ['read', 'update', 'delete'],
         targets: {
@@ -41,7 +41,7 @@ module.exports = {
         rule: 'author'
     }, {
         description: 'Manage own documents',
-        roles: 'member',
+        roles: 'employee',
         type: 'allow',
         actions: ['read', 'update', 'delete'],
         targets: {
@@ -50,8 +50,8 @@ module.exports = {
         },
         rule: 'creator'
     }, {
-        description: 'Default member cannot change task states',
-        roles: 'member',
+        description: 'Default employee cannot change task states',
+        roles: 'employee',
         type: 'deny',
         actions: 'update',
         targets: {
@@ -153,9 +153,9 @@ module.exports = {
             label: 'Manager',
             description: 'Manager creates, assigns and reviews tasks'
         },
-        'member': {
-            label: 'Member',
-            description: 'Team member',
+        'employee': {
+            label: 'Employee',
+            description: 'Team employee',
             children: [
                 'moduleOffice',
                 'moduleApiBaseUpload'
@@ -200,10 +200,10 @@ module.exports = {
     // bind users to roles
     assignments: {
         'Adam': 'administrator',
-        'Bob': ['executor', 'member'],
-        'Denis': ['executor', 'member'],
-        'Sara': ['manager', 'member'],
-        'Tim': ['manager', 'member']
+        'Bob': ['executor', 'employee'],
+        'Denis': ['executor', 'employee'],
+        'Sara': ['manager', 'employee'],
+        'Tim': ['manager', 'employee']
     },
 
     // rules to auto-bind users to roles

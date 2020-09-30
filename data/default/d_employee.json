@@ -3,7 +3,7 @@
     "_id": {
       "$oid": "5f67f42be6bb2c17d00a5f95"
     },
-    "_class": "member",
+    "_class": "employee",
     "_creator": {
       "$oid": "5f56d7618ac98f19c85ac536"
     },
@@ -19,7 +19,7 @@
     "_id": {
       "$oid": "5f67f436e6bb2c17d00a5f96"
     },
-    "_class": "member",
+    "_class": "employee",
     "_creator": {
       "$oid": "5f56d7618ac98f19c85ac536"
     },
@@ -35,7 +35,7 @@
     "_id": {
       "$oid": "5f67f8bce66546135086c6c3"
     },
-    "_class": "member",
+    "_class": "employee",
     "_creator": {
       "$oid": "5f56d7618ac98f19c85ac536"
     },
@@ -51,7 +51,7 @@
     "_id": {
       "$oid": "5f67f8c6e66546135086c6c4"
     },
-    "_class": "member",
+    "_class": "employee",
     "_creator": {
       "$oid": "5f56d7618ac98f19c85ac536"
     },

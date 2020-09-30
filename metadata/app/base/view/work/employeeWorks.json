@@ -1,6 +1,6 @@
 {
-  "label": "Member works",
-  "description": "List of works in a member",
+  "label": "Employee works",
+  "description": "List of works in a employee",
   "readOnly": false,
   "attrs": [
     {

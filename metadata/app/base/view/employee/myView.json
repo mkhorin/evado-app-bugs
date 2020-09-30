@@ -1,5 +1,8 @@
 {
-  "description": "Default edit",
+  "label": "My employee",
+  "filter": {
+    "user": "$user"
+  },
   "readOnly": false,
   "attrs": [
     {
@@ -8,29 +11,18 @@
     },
     {
       "name": "user",
-      "orderNumber": 20,
-      "readOnly": true
+      "orderNumber": 20
     },
     {
       "name": "assignedTasks",
-      "options": {
-        "css": "no-label"
-      },
       "orderNumber": 30
     },
     {
       "name": "createdTasks",
-      "options": {
-        "css": "no-label"
-      },
       "orderNumber": 40
     },
     {
       "name": "workLog",
-      "listView": "memberWorks",
-      "options": {
-        "css": "no-label"
-      },
       "orderNumber": 60
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "label": "Create member",
+  "label": "Create employee",
   "description": "Default creation view",
   "readOnly": false,
   "attrs": [

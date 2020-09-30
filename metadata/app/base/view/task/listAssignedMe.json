@@ -2,7 +2,7 @@
   "label": "Assigned to me",
   "description": "List assigned to me tasks",
   "filter": {
-    "assignee": "$user.meta.base.member"
+    "assignee": "$user.meta.base.employee"
   },
   "readOnly": false,
   "attrs": [

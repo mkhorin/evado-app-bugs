@@ -198,13 +198,13 @@
       "label": "Author",
       "type": "ref",
       "viewType": "relationSelect",
-      "description": "Link to member created a task. \nMember binded to system user is assigned by default",
+      "description": "Link to employee created a task. \nEmployee binded to system user is assigned by default",
       "commands": [
         "edit"
       ],
       "commonSearchable": false,
       "createOnRead": false,
-      "defaultValue": "$user.meta.base.member",
+      "defaultValue": "$user.meta.base.employee",
       "eagerLoading": true,
       "escape": true,
       "hidden": false,
@@ -213,7 +213,7 @@
       "orderNumber": 70,
       "sortable": false,
       "sortableRelation": false,
-      "refClass": "member",
+      "refClass": "employee",
       "readOnly": true,
       "required": true,
       "selectSearchable": false,
@@ -225,7 +225,7 @@
       "label": "Assignee",
       "type": "ref",
       "viewType": "relationSelect",
-      "description": "Link to member responsible for fixing a task.",
+      "description": "Link to employee responsible for fixing a task.",
       "commands": [
         "add",
         "remove",
@@ -242,7 +242,7 @@
       "orderNumber": 80,
       "sortable": false,
       "sortableRelation": false,
-      "refClass": "member",
+      "refClass": "employee",
       "readOnly": false,
       "required": false,
       "selectSearchable": false,
@@ -368,8 +368,8 @@
   ],
   "groups": [
     {
-      "name": "members",
-      "label": "Members",
+      "name": "employees",
+      "label": "Employees",
       "orderNumber": 110,
       "readOnly": false,
       "required": false,
@@ -379,7 +379,7 @@
       "name": "assignee",
       "label": "Assignee column",
       "orderNumber": 1010,
-      "parent": "members",
+      "parent": "employees",
       "readOnly": false,
       "required": false
     },
@@ -387,7 +387,7 @@
       "name": "author",
       "label": "Author column",
       "orderNumber": 1020,
-      "parent": "members",
+      "parent": "employees",
       "readOnly": false,
       "required": false
     },

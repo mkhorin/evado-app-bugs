@@ -1,8 +1,8 @@
 {
   "abstract": false,
-  "description": "Team member",
+  "description": "Team employee",
   "header": ".name",
-  "label": "Member",
+  "label": "Employee",
   "attrs": [
     {
       "name": "name",

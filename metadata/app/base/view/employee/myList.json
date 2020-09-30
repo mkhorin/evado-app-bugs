@@ -1,5 +1,5 @@
 {
-  "label": "My member",
+  "label": "My employee",
   "editView": "myView",
   "filter": {
     "user": "$user"

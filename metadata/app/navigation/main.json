@@ -37,10 +37,10 @@
       "view": "list"
     },
     {
-      "name": "myMember",
-      "label": "My member",
+      "name": "myEmployee",
+      "label": "My employee",
       "orderNumber": 50,
-      "class": "member",
+      "class": "employee",
       "view": "myList",
       "options": {
         "separatorBefore": true

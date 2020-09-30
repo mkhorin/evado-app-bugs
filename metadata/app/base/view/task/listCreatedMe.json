@@ -2,7 +2,7 @@
   "label": "Created by me",
   "description": "Tasks created by me",
   "filter": {
-    "author": "$user.meta.base.member"
+    "author": "$user.meta.base.employee"
   },
   "readOnly": false,
   "attrs": [
