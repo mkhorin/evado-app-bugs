@@ -6,59 +6,59 @@
         <template data-id="task">
             <div class="page-head">
                 <ol class="breadcrumb">
-                    <li><a href="#" data-action="main" data-t="">Main</a></li>
-                    <li><a href="#" data-action="createdTasks" data-t="meta">Tasks</a></li>
-                    <li data-t="">#{{_id}}</li>
+                    <li class="breadcrumb-item"><a href="#" data-action="main" data-t="">Main</a></li>
+                    <li class="breadcrumb-item"><a href="#" data-action="createdTasks" data-t="meta">Tasks</a></li>
+                    <li class="breadcrumb-item" data-t="">#{{_id}}</li>
                 </ol>
             </div>
 
             <h1>{{summary}}</h1>
 
-            <div class="form-horizontal form">
-                <div class="form-group">
-                    <label class="col-xs-3 control-label" data-t="meta">State</label>
-                    <div class="col-xs-9">
-                        <div class="form-control-static"><b data-t="meta">{{state}}</b></div>
+            <div class=" form">
+                <div class="form-group row">
+                    <label class="col-3 col-form-label" data-t="meta">State</label>
+                    <div class="col-9">
+                        <div class="form-control-plaintext"><b data-t="meta">{{state}}</b></div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-xs-3 control-label" data-t="meta">Description</label>
-                    <div class="col-xs-9">
-                        <div class="form-control-static">{{description}}</div>
+                <div class="form-group row">
+                    <label class="col-3 col-form-label" data-t="meta">Description</label>
+                    <div class="col-9">
+                        <div class="form-control-plaintext">{{description}}</div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-xs-3 control-label" data-t="meta">Project</label>
-                    <div class="col-xs-9">
-                        <div class="form-control-static"><span data-t="meta">{{project}}</span></div>
+                <div class="form-group row">
+                    <label class="col-3 col-form-label" data-t="meta">Project</label>
+                    <div class="col-9">
+                        <div class="form-control-plaintext"><span data-t="meta">{{project}}</span></div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-xs-3 control-label" data-t="meta">Priority</label>
-                    <div class="col-xs-9">
-                        <div class="form-control-static"><b data-t="meta">{{priority}}</b></div>
+                <div class="form-group row">
+                    <label class="col-3 col-form-label" data-t="meta">Priority</label>
+                    <div class="col-9">
+                        <div class="form-control-plaintext"><b data-t="meta">{{priority}}</b></div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-xs-3 control-label" data-t="meta">Assignee</label>
-                    <div class="col-xs-9">
-                        <div class="form-control-static">{{assignee}}</div>
+                <div class="form-group row">
+                    <label class="col-3 col-form-label" data-t="meta">Assignee</label>
+                    <div class="col-9">
+                        <div class="form-control-plaintext">{{assignee}}</div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-xs-3 control-label" data-t="meta">Hours spent</label>
-                    <div class="col-xs-9">
-                        <div class="form-control-static">{{timeSpent}}</div>
+                <div class="form-group row">
+                    <label class="col-3 col-form-label" data-t="meta">Hours spent</label>
+                    <div class="col-9">
+                        <div class="form-control-plaintext">{{timeSpent}}</div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-xs-3 control-label" data-t="meta">Created at</label>
-                    <div class="col-xs-9">
-                        <div class="form-control-static">{{createdAt}}</div>
+                <div class="form-group row">
+                    <label class="col-3 col-form-label" data-t="meta">Created at</label>
+                    <div class="col-9">
+                        <div class="form-control-plaintext">{{createdAt}}</div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-xs-offset-3 col-xs-9">
+                <div class="form-group row">
+                    <div class="offset-3 col-9">
                         {{close}}
                         {{reopen}}
                     </div>

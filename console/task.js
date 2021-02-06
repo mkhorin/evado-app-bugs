@@ -1,7 +1,9 @@
 'use strict';
-
-// node console/task [--config name]
-
+/**
+ * Task management
+ *
+ * node console/task [--config name]
+ */
 const Application = require('../Application');
 const Console = require('evado/console/Console');
 const params = Console.parseProcessArguments();

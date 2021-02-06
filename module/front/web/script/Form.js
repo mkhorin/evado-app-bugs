@@ -45,7 +45,7 @@ Front.Form = class Form extends Front.Element {
 
     addErrors (data) {
         if (!data) {
-            return falae;
+            return false;
         }
         const topErrors = [];
         for (const name of Object.keys(data)) {

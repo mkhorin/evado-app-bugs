@@ -1,6 +1,6 @@
 'use strict';
 
-Front.Task = class Task extends Front.LoadableContent {
+Front.Task = class Task extends Front.Loadable {
 
     init () {
         super.init();
@@ -120,7 +120,7 @@ Front.CreatedTask = class CreatedTask extends Front.Task {
     }
 };
 
-Front.TaskList = class TaskList extends Front.LoadableContent {
+Front.TaskList = class TaskList extends Front.Loadable {
 
     init () {
         super.init();
@@ -151,7 +151,7 @@ Front.TaskList = class TaskList extends Front.LoadableContent {
     }
 
     render (data) {
-        let items = data && data.items;
+        let items = data?.items;
         items = Array.isArray(items) ? items : [];
         items = items.map(this.renderItem, this).join('');
         const template = items ? 'list' : 'empty';
@@ -175,9 +175,9 @@ Front.TaskList = class TaskList extends Front.LoadableContent {
 
     onDone (data) {
         super.onDone(data);
-        this.pagination.setTotal(data && data.totalSize);
+        this.pagination.setTotal(data?.totalSize);
         this.$content.append(this.pagination.render());
-        this.translateContainer();
+        Jam.t(this.$container);
     }
 };
 

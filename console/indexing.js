@@ -1,7 +1,9 @@
 'use strict';
-
-// node console/indexing [--config name]
-
+/**
+ * Indexing management
+ *
+ * node console/indexing [--config name]
+ */
 const Application = require('../Application');
 const Console = require('evado/console/Console');
 const params = Console.parseProcessArguments();

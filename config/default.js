@@ -17,7 +17,7 @@ module.exports = {
             secret: 'bugs.evado'
         },
         'i18n': {
-            // language: 'ru'
+            language: 'en'
         },
         'router': {
             // defaultModule: 'front'
@@ -69,7 +69,7 @@ module.exports = {
     users: require('./default-users'),
     userFilters: require('./default-userFilters'),
     security: require('./default-security'),
-    notices: require('./default-notices'),
+    notifications: require('./default-notifications'),
     tasks: require('./default-tasks'),
     utilities: require('./default-utilities'),
     eventHandlers: require('./default-eventHandlers'),

@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = [{
-    description: 'Done task notice',
+    description: 'Done task notification',
     events: 'meta.base.transit.task.complete',
-    notices: 'doneTask'
+    notifications: 'doneTask'
 }];

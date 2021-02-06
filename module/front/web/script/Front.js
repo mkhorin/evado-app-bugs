@@ -3,7 +3,7 @@
 class Front {
 
     static getElementClass (name) {
-        return this[name] && this[name].prototype instanceof this.Element ? this[name] : null;
+        return this[name]?.prototype instanceof this.Element ? this[name] : null;
     }
 
     static toggle ($element, state) {
@@ -11,12 +11,7 @@ class Front {
     }
 
     static getTemplate (name, container) {
-        const template = container.querySelector(`template[data-id="${name}"]`);
-        if (template) {
-            return template.innerHTML;
-        }
-        console.error(`Template not found: ${name}`);
-        return '';
+        return container.querySelector(`template[data-id="${name}"]`)?.innerHTML;
     }
 
     static resolveTemplate (text, data, start = '{{', end = '}}') {
@@ -29,9 +24,8 @@ class Front {
 
     static setPageTitle (text) {
         const $title = $(document.head).find('title');
-        const base = $title.data('title');
-        text = Jam.i18n.translate(text);
-        $title.html(text ? `${text} - ${base}` : base);
+        const base = $title.data('title');        
+        $title.html(text ? `${Jam.t(text)} - ${base}` : base);
     }
 
     static escapeData (data, keys) {
@@ -69,8 +63,8 @@ class Front {
         this.$container = $('.front');
         this.meta = new this.constructor.Meta(this);
         this.constructor.createHandlers(this, document);
-        this.on('click', '.nav-tab a', this.onClickTab.bind(this));
-        this.on('click', '.form-set-toggle', this.onClickGroup.bind(this));
+        this.on('click', '.nav-link', this.onTab.bind(this));
+        this.on('click', '.form-set-toggle', this.onGroup.bind(this));
         this.on('click', '[data-action="main"]', this.onMain.bind(this));
         this.on('click', '[data-action="assignedTasks"]', this.onAssignedTasks.bind(this));
         this.on('click', '[data-action="createdTasks"]', this.onCreatedTasks.bind(this));
@@ -150,9 +144,9 @@ class Front {
         this.$container.trigger(...arguments);
     }
 
-    onClickTab (event) {
+    onTab (event) {
         event.preventDefault();
-        const $nav = $(event.currentTarget).parent();
+        const $nav = $(event.currentTarget);
         const id = $nav.data('id');
         const $tabs = $nav.closest('.tabs');
         const $content = $tabs.children('.tab-content');
@@ -163,7 +157,7 @@ class Front {
         $tabs.trigger('tab:active', {id});
     }
 
-    onClickGroup (event) {
+    onGroup (event) {
         $(event.currentTarget).closest('.form-set').toggleClass('active');
     }
 
@@ -261,10 +255,6 @@ Front.Element = class Element {
     trigger () {
         this.$container.trigger(...arguments);
     }
-
-    translateContainer ($container) {
-        Jam.i18n.translateContainer($container || this.$container, ...arguments);
-    }
 };
 
 Front.AjaxQueue = class AjaxQueue {
@@ -300,7 +290,7 @@ Front.AjaxQueue = class AjaxQueue {
             return false;
         }
         const {deferred, args} = this._tasks.splice(0, 1)[0];
-        const csrf = Jam.Helper.getCsrfToken();
+        const csrf = Jam.getCsrfToken();
         const data = {csrf, ...args[1]};
         const params = {
             method: 'post',
@@ -321,14 +311,12 @@ Front.AjaxQueue = class AjaxQueue {
     }
 
     abort () {
-        if (this._xhr) {
-            this._xhr.abort();
-            this._xhr = null;
-        }
+        this._xhr?.abort();
+        this._xhr = null;
     }
 };
 
-Front.LoadableContent = class LoadableContent extends Front.Element {
+Front.Loadable = class Loadable extends Front.Element {
 
     init () {
         this.$content = this.$container.children('.loadable-content');
@@ -377,7 +365,7 @@ Front.LoadableContent = class LoadableContent extends Front.Element {
     onDone (data) {
         this.toggleLoader(false);
         this.$content.html(this.render(data));
-        this.translateContainer();
+        Jam.t(this.$container);
         Jam.Helper.executeSerialImageLoading($(this.container));
     }
 
@@ -404,7 +392,7 @@ Front.LoadableContent = class LoadableContent extends Front.Element {
 
     getItemTitle (key, data) {
         const item = data[key];
-        if (item && item.hasOwnProperty('_title')) {
+        if (item?.hasOwnProperty('_title')) {
             return item._title;
         }
         return data.hasOwnProperty(`${key}_title`) ? data[`${key}_title`] : item;
@@ -564,10 +552,10 @@ Front.Meta = class Meta {
     }
 
     formatAsEnum (value, {enums}, ...args) {
-        const items = enums && enums[0] && enums[0].items || [];
+        const items = enums?.[0]?.items || [];
         for (const item of items) {
             if (item.value === value) {
-                return Jam.i18n.translate(item.text, ...args);
+                return Jam.t(item.text, ...args);
             }
         }
         return value;

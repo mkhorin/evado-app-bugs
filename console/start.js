@@ -1,7 +1,9 @@
 'use strict';
-
-// node console/start [--config name]
-
+/**
+ * Start app
+ *
+ * node console/start [--config name] [--port number]
+ */
 const Application = require('../Application');
 const Console = require('evado/console/Console');
 const params = Console.parseProcessArguments();
