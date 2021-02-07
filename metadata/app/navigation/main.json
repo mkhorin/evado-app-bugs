@@ -18,33 +18,37 @@
       "view": "listCreatedMe"
     },
     {
+      "name": "divider1",
+      "orderNumber": 30,
+      "type": "divider"
+    },
+    {
       "name": "newTasks",
       "label": "New tasks",
       "description": "List new tasks",
-      "orderNumber": 30,
+      "orderNumber": 40,
       "class": "task",
-      "view": "listNew",
-      "options": {
-        "separatorBefore": true
-      }
+      "view": "listNew"
     },
     {
       "name": "allTasks",
       "label": "All tasks",
       "description": "List all tasks",
-      "orderNumber": 40,
+      "orderNumber": 50,
       "class": "task",
       "view": "list"
     },
     {
+      "name": "divider2",
+      "orderNumber": 60,
+      "type": "divider"
+    },
+    {
       "name": "myEmployee",
       "label": "My employee",
-      "orderNumber": 50,
+      "orderNumber": 70,
       "class": "employee",
-      "view": "myList",
-      "options": {
-        "separatorBefore": true
-      }
+      "view": "myList"
     }
   ]
 }
