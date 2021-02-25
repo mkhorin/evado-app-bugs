@@ -54,16 +54,10 @@ module.exports = {
             Class: require('evado-module-account/Module')
         },
         'admin': {
-            Class: require('evado-module-admin/Module'),
-            params: {
-                separateNextCommonMenuItem: true
-            }
+            Class: require('evado-module-admin/Module')
         },
         'front': {
-            Class: require('../module/front/Module'),
-            params: {
-                separateNextCommonMenuItem: true
-            }
+            Class: require('../module/front/Module')
         }
     },
     users: require('./default-users'),
