@@ -6,20 +6,16 @@
 module.exports = {
 
     build: [{
-        Class: 'FileMerger',
+        Class: 'Packer',
         sources: [
-            'front/Front.js',
-            'front/Element.js',
-            'front/Loadable.js',
-            'front/form/Form.js',
-            'front/page/Page.js',
-            'front/task/Task.js',
-            'front'
+            'src/Front.js',
+            'src/Element.js',
+            'src/Loadable.js',
+            'src/form/Form.js',
+            'src/page/Page.js',
+            'src/task/Task.js',
+            'src'
         ],
-        target: 'dist/front.min.js'
-    }],
-
-    deploy: {
-        'vendor': 'dist/front.min.js'
-    }
+        target: 'vendor/front.min.js'
+    }]
 };
