@@ -86,12 +86,6 @@ body {
     margin: 0 2rem 1rem 0;
 }
 
-/* BREADCRUMB */
-
-.breadcrumb {
-    background: #eff;
-}
-
 /* ACCOUNT */
 
 .account-block {
@@ -105,11 +99,9 @@ body {
 .user-toggle {
     cursor: pointer;
     color: #666;
-    line-height: 3rem;
-    border-left: 1px solid #ddd;
 }
 .user-toggle:hover {
-    color: var(--primary);
+    color: var(--dark-primary);
 }
 .user-toggle .dropdown-toggle {
     padding: 0 12px;
