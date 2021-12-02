@@ -1,60 +1,57 @@
+<!-- default/_createdTasks -->
+<template id="created-tasks">
+    <div class="page">
 
-<div class="page" data-page="createdTasks" data-handler="CreatedTasksPage">
+        <breadcrumbs>
+            <template #path>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a @click.prevent="toMain" href="#" data-t="">Main</a></li>
+                    <li class="breadcrumb-item" data-t="meta">Created tasks</li>
+                </ol>
+            </template>
+        </breadcrumbs>
 
-    <div class="page-head">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#" data-action="main" data-t="">Main</a></li>
-            <li class="breadcrumb-item" data-t="meta">Created tasks</li>
-        </ol>
-    </div>
+        <h1 data-t="">Tasks created by me</h1>
 
-    <h1 data-t="">Tasks created by me</h1>
+        <div class="loadable-container">
 
-    <div class="task-list loadable-container" data-handler="CreatedTaskList">
-
-        <template data-id="list">
-            <div class="task-items">{{items}}</div>
-        </template>
-
-        <template data-id="item">
-            <div class="task-item" data-id="{{_id}}">
-                <div class="cell">
-                    <label data-t="meta">State</label>
-                    <div class="value"><b data-t="meta">{{state}}</b></div>
-                </div>
-                <div class="cell">
-                    <div class="value">
-                        <a href="#" data-action="createdTask">{{summary}}</a>
+            <div class="task-items">
+                <div v-for="item of items" :key="item.id" class="task-item">
+                    <div class="cell">
+                        <label data-t="meta">State</label>
+                        <div class="value"><b data-t="meta">{{item.state}}</b></div>
                     </div>
-                </div>
-                <div class="cell">
-                    <label data-t="meta">Priority</label>
-                    <div class="value">
-                        <b data-t="meta">{{priority}}</b>
+                    <div class="cell">
+                        <div class="value">
+                            <a @click.prevent="onTask" :data-id="item.id" href="#">
+                                {{item.summary}}
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="cell">
-                    <label data-t="meta">Assignee</label>
-                    <div class="value">
-                        <span data-t="meta">{{assignee}}</span>
+                    <div class="cell">
+                        <label data-t="meta">Priority</label>
+                        <div class="value">
+                            <b data-t="meta">{{item.priority}}</b>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <label data-t="meta">Assignee</label>
+                        <div class="value">
+                            <span v-html="item.assignee" data-t="meta"></span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </template>
 
-        <%- include('./_pagination') %>
+            <pagination></pagination>
 
-        <template data-id="empty">
-            <div class="alert-warning alert">
+            <div v-show="!loading && empty" class="alert-warning alert">
                 <span data-t="">You have no tasks</span>
             </div>
-        </template>
 
-        <template data-id="error">
-            <div class="alert-danger alert">{{text}}</div>
-        </template>
-
-        <div class="loadable-content"></div>
-        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
+            <div v-show="loading" class="loader">
+                <i class="fa fa-spinner fa-spin"></i>
+            </div>
+        </div>
     </div>
-</div>
+</template>

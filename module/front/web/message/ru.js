@@ -5,6 +5,9 @@ Object.assign(Jam.I18n.defaults, {
     'Back': 'Назад',
     'Bug Tracking System': 'Система отслеживания ошибок',
 
+    'Front interface for managers.': 'Пользовательский интерфейс для менеджеров.',
+    'Front interface for task executors.': 'Пользовательский интерфейс для исполнителей.',
+
     'Main': 'Главная',
 
     'Please login as executor or manager to continue': 'Для продолжения войдите как исполнитель или менеджер',

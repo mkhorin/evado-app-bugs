@@ -1,21 +1,16 @@
-<%
-const s = typeof start === 'undefined' ? '{{' : start;
-const e = typeof end === 'undefined' ? '}}' : end;
-%>
-<template data-id="pagination">
-    <nav>
+<!-- _part/pagination -->
+<template id="pagination">
+    <nav v-show="visible">
         <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#" data-action="first"><span>«</span></a></li>
-            <li class="page-item"><a class="page-link" href="#" data-action="prev"><span>‹</span></a></li>
-            <%- s %>pages<%- e %>
-            <li class="page-item"><a class="page-link" href="#" data-action="next"><span>›</span></a></li>
-            <li class="page-item"><a class="page-link" href="#" data-action="last"><span>»</span></a></li>
+            <li class="page-item"><a class="page-link" href="#" @click.prevent="onFirst"><span>«</span></a></li>
+            <li class="page-item"><a class="page-link" href="#" @click.prevent="onPrev"><span>‹</span></a></li>
+            <template v-for="page in pages">
+                <li :class="{'active': page.active, 'page-item': true}">
+                    <a :data-page="page.page" class="page-link" href="#" @click.prevent="onPage">{{page.text}}</a>
+                </li>
+            </template>
+            <li class="page-item"><a class="page-link" href="#" @click.prevent="onNext"><span>›</span></a></li>
+            <li class="page-item"><a class="page-link" href="#" @click.prevent="onLast"><span>»</span></a></li>
         </ul>
     </nav>
-</template>
-
-<template data-id="page">
-    <li class="page-item <%- s %>active<%- e %>">
-        <a class="page-link" href="#" data-page="<%- s %>page<%- e %>"><%- s %>text<%- e %></a>
-    </li>
 </template>

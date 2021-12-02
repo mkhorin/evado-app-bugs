@@ -1,91 +1,87 @@
+<!-- default/_assignedTask -->
+<template id="assigned-task">
+    <div class="page">
 
-<div class="page" data-page="assignedTask" data-handler="AssignedTaskPage">
-
-    <div class="task loadable-container" data-handler="AssignedTask">
-
-        <template data-id="task">
-            <div class="page-head">
+        <breadcrumbs>
+            <template #path>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#" data-action="main" data-t="">Main</a></li>
-                    <li class="breadcrumb-item"><a href="#" data-action="assignedTasks" data-t="meta">Tasks</a></li>
-                    <li class="breadcrumb-item" data-t="">#{{_id}}</li>
+                    <li class="breadcrumb-item"><a @click.prevent="toMain" href="#" data-t="">Main</a></li>
+                    <li class="breadcrumb-item"><a @click.prevent="toAssignedTasks" href="#" data-t="meta">Tasks</a></li>
+                    <li class="breadcrumb-item">#{{task}}</li>
                 </ol>
+            </template>
+        </breadcrumbs>
+
+        <div class="loadable-container">
+
+            <div  v-show="!loading" class="loadable-content">
+                <h1>{{summary}}</h1>
+                <div class=" form">
+                    <div class="form-group row">
+                        <label class="col-3 col-form-label" data-t="meta">State</label>
+                        <div class="col-9">
+                            <div class="form-control-plaintext"><b>{{stateTitle}}</b></div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-3 col-form-label" data-t="meta">Description</label>
+                        <div class="col-9">
+                            <div class="form-control-plaintext">{{description}}</div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-3 col-form-label" data-t="meta">Project</label>
+                        <div class="col-9">
+                            <div class="form-control-plaintext">
+                                <span data-t="meta">{{project}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-3 col-form-label" data-t="meta">Priority</label>
+                        <div class="col-9">
+                            <div class="form-control-plaintext">
+                                <b data-t="meta">{{priority}}</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-3 col-form-label" data-t="meta">Assignee</label>
+                        <div class="col-9">
+                            <div class="form-control-plaintext" v-html="assignee"></div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-3 col-form-label" data-t="meta">Hours spent</label>
+                        <div class="col-9">
+                            <div class="form-control-plaintext" v-html="timeSpent"></div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-3 col-form-label" data-t="meta">Created at</label>
+                        <div class="col-9">
+                            <div class="form-control-plaintext">{{createdAt}}</div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="offset-3 col-9">
+                            <button v-show="isNew || isDone" @click="onStart" class="btn-success btn" type="button">
+                                <span data-t="meta">Start working</span>
+                            </button>
+                            <button v-show="isInProgress" @click="onComplete" class="btn-primary btn" type="button">
+                                <span data-t="meta">Complete</span>
+                            </button>
+                            <button v-show="isInProgress" @click="onStop" class="btn-outline-danger btn" type="button">
+                                <span data-t="meta">Stop working</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <h1>{{summary}}</h1>
-
-            <div class="form">
-                <div class="form-group row">
-                    <label class="col-3 col-form-label" data-t="meta">State</label>
-                    <div class="col-9">
-                        <div class="form-control-plaintext"><b data-t="meta">{{state}}</b></div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-3 col-form-label" data-t="meta">Description</label>
-                    <div class="col-9">
-                        <div class="form-control-plaintext">{{description}}</div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-3 col-form-label" data-t="meta">Project</label>
-                    <div class="col-9">
-                        <div class="form-control-plaintext"><span data-t="meta">{{project}}</span></div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-3 col-form-label" data-t="meta">Priority</label>
-                    <div class="col-9">
-                        <div class="form-control-plaintext"><b data-t="meta">{{priority}}</b></div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-3 col-form-label" data-t="meta">Author</label>
-                    <div class="col-9">
-                        <div class="form-control-plaintext">{{author}}</div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-3 col-form-label" data-t="meta">Hours spent</label>
-                    <div class="col-9">
-                        <div class="form-control-plaintext">{{timeSpent}}</div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-3 col-form-label" data-t="meta">Created at</label>
-                    <div class="col-9">
-                        <div class="form-control-plaintext">{{createdAt}}</div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="offset-3 col-9">
-                        {{start}}
-                        {{stop}}
-                    </div>
-                </div>
+            <div v-show="loading" class="loader">
+                <i class="fa fa-spinner fa-spin"></i>
             </div>
-        </template>
-
-        <template data-id="start">
-            <button class="btn-success btn" type="button" data-command="start">
-                <span data-t="meta">Start working</span>
-            </button>
-        </template>
-
-        <template data-id="stop">
-            <button class="btn-primary btn" type="button" data-command="complete">
-                <span data-t="meta">Complete</span>
-            </button>
-            <button class="btn-outline-danger btn" type="button" data-command="stop">
-                <span data-t="meta">Stop working</span>
-            </button>
-        </template>
-
-        <template data-id="error">
-            <div class="alert-danger alert">{{text}}</div>
-        </template>
-
-        <div class="loadable-content"></div>
-        <div class="loader"><i class="fa fa-spinner fa-spin"></i></div>
+        </div>
     </div>
-</div>
+</template>

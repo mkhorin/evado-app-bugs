@@ -1,31 +1,42 @@
 <%
 layout(_view.get('_layout/content'));
 
-script('front/vendor/front.min.js');
-script('front/script/module.js');
+script('front/vendor/vue/vue.js');
+script('front/script/breadcrumbs.js');
+script('front/script/assignedTask.js');
+script('front/script/assignedTasks.js');
+script('front/script/createdTask.js');
+script('front/script/createdTasks.js');
+script('front/script/mainPage.js');
+script('front/script/pagination.js');
+script('front/script/front.js');
 
-const dataUrl = _url('/api/base/data/');
-const fileUrl = _url('/api/base/file/');
-const metaUrl = _url('/api/base/meta/');
-
-const isGuest = _controller.user.isGuest();
-const isExecutor = !isGuest && _controller.user.hasAssignment('executor');
-const isManager = !isGuest && _controller.user.hasAssignment('manager');
+const user = _controller.user;
+const isGuest = user.isGuest();
+const isExecutor = !isGuest && user.hasAssignment('executor');
+const isManager = !isGuest && user.hasAssignment('manager');
 %>
+
+<%- include('./_breadcrumbs') %>
+<%- include('./_assignedTask') %>
+<%- include('./_assignedTasks') %>
+<%- include('./_createdTask') %>
+<%- include('./_createdTasks') %>
+<%- include('./_mainPage') %>
+<%- include('./_pagination') %>
 
 <%- include(_view.get('_part/signboard')) %>
 
-<div class="front"
-     data-guest="<%- isGuest %>"
+<div id="front"
      data-executor="<%- isExecutor %>"
      data-manager="<%- isManager %>"
-     data-user="<%- _controller.user.getId() %>"
-     data-data-url="<%- dataUrl %>"
-     data-meta-url="<%- metaUrl %>">
+     data-user-id="<%- user.getId() %>"
+     data-auth-url="<%- _url('/auth/sign-in?returnUrl=/front') %>"
+     data-data-url="<%- _url('/api/base/data') %>"
+     data-thumbnail-url="<%- _url('/api/base/file/thumbnail') %>?c=picture"
+     data-csrf="<%- _controller.getCsrfToken() %>">
 
-    <%- include('./_main', {isGuest, isExecutor, isManager}) %>
-    <%- include('./_assignedTasks') %>
-    <%- include('./_assignedTask') %>
-    <%- include('./_createdTasks') %>
-    <%- include('./_createdTask') %>
+    <keep-alive include="main-page">
+        <componen :is="activePage" v-bind="activePageProps"></componen>
+    </keep-alive>
 </div>
