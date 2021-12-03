@@ -24,14 +24,8 @@ Vue.mixin({
         this.translateElement();
     },
     methods: {
-        isMan () {
-            return this.$root.manager;
-        },
         getDataUrl (action) {
             return `${this.$root.dataUrl}/${action}`;
-        },
-        getThumbnailUrl (id, size = 'sm') {
-            return `${this.$root.thumbnailUrl}&s=${size}&id=${id}`;
         },
         getRefArray (name) {
             const data = this.$refs[name];
@@ -90,7 +84,6 @@ const front = new Vue({
         csrf: String,
         authUrl: String,
         dataUrl: String,
-        thumbnailUrl: String,
         userId: String,
         executor: String,
         manager: String

@@ -1,20 +1,17 @@
-<!-- default/_createdTask -->
 <template id="created-task">
     <div class="page">
 
         <breadcrumbs>
             <template #path>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a @click.prevent="toMain" href="#" data-t="">Main</a></li>
-                    <li class="breadcrumb-item"><a @click.prevent="toCreatedTasks" href="#" data-t="meta">Tasks</a></li>
-                    <li class="breadcrumb-item">#{{task}}</li>
-                </ol>
+                <li class="breadcrumb-item"><a @click.prevent="toMain" href="#" data-t="">Main</a></li>
+                <li class="breadcrumb-item"><a @click.prevent="toCreatedTasks" href="#" data-t="meta">Tasks</a></li>
+                <li class="breadcrumb-item">#{{task}}</li>
             </template>
         </breadcrumbs>
 
         <div class="loadable-container">
 
-            <div  v-show="!loading" class="loadable-content">
+            <template v-show="!loading">
                 <h1>{{summary}}</h1>
                 <div class=" form">
                     <div class="form-group row">
@@ -77,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </template>
 
             <div v-show="loading" class="loader">
                 <i class="fa fa-spinner fa-spin"></i>
