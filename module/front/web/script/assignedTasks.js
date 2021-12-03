@@ -22,8 +22,8 @@ Vue.component('assigned-tasks', {
         await this.reload();
     },
     methods: {
-        onTask (event) {
-            this.$root.$emit('assigned-task', event.currentTarget.dataset.id);
+        onTask (id) {
+            this.$root.$emit('assigned-task', id);
         },
         async reload () {
             await this.load(0);

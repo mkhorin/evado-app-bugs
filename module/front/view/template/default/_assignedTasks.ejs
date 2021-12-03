@@ -22,9 +22,7 @@
                     </div>
                     <div class="cell">
                         <div class="value">
-                            <a @click.prevent="onTask" :data-id="item.id" href="#">
-                                {{item.summary}}
-                            </a>
+                            <a @click.prevent="onTask(item.id)" href="#">{{item.summary}}</a>
                         </div>
                     </div>
                     <div class="cell">

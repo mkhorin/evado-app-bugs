@@ -22,8 +22,8 @@ Vue.component('created-tasks', {
         await this.reload();
     },
     methods: {
-        onTask (event) {
-            this.$root.$emit('created-task', event.currentTarget.dataset.id);
+        onTask (id) {
+            this.$root.$emit('created-task', id);
         },
         async reload () {
             await this.load(0);
