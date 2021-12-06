@@ -22,12 +22,11 @@ const front = new Vue({
     computed: {
         activePageProps () {
             switch (this.activePage) {
-                case 'created-task': return {
-                    task: this.activeTask
-                };
-                case 'assigned-task': return {
-                    task: this.activeTask
-                };
+                case 'created-task':
+                case 'assigned-task':
+                    return {
+                        task: this.activeTask
+                    };
             }
         }
     },

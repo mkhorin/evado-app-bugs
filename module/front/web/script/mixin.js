@@ -7,13 +7,13 @@ Vue.mixin({
         };
     },
     computed: {
-        isGuest () {
+        guest () {
             return !this.$root.userId;
         },
-        isExecutor () {
+        executor () {
             return this.$root.executor === 'true';
         },
-        isManager () {
+        manager () {
             return this.$root.manager === 'true';
         }
     },
@@ -54,7 +54,7 @@ Vue.mixin({
             }
         },
         requireAuth () {
-            if (this.isGuest()) {
+            if (this.guest) {
                 location.assign(this.$root.authUrl);
                 return false;
             }
