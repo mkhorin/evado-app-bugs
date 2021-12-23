@@ -14,6 +14,7 @@
       "eagerLoading": false,
       "escape": true,
       "hidden": false,
+      "hideEmpty": false,
       "history": false,
       "multiple": false,
       "orderNumber": 10,
@@ -22,6 +23,7 @@
       "readOnly": true,
       "required": false,
       "selectSearchable": false,
+      "signed": false,
       "trim": true,
       "unique": false
     },
@@ -39,6 +41,7 @@
       "eagerLoading": false,
       "escape": true,
       "hidden": false,
+      "hideEmpty": false,
       "history": false,
       "multiple": false,
       "onDelete": "null",
@@ -49,6 +52,7 @@
       "readOnly": false,
       "required": true,
       "selectSearchable": false,
+      "signed": false,
       "trim": true,
       "unique": false
     },
@@ -62,6 +66,7 @@
       "eagerLoading": false,
       "escape": true,
       "hidden": false,
+      "hideEmpty": false,
       "history": false,
       "multiple": false,
       "orderNumber": 30,
@@ -70,6 +75,7 @@
       "readOnly": false,
       "required": true,
       "selectSearchable": true,
+      "signed": false,
       "trim": true,
       "unique": false,
       "rules": [
@@ -99,6 +105,7 @@
       "eagerLoading": false,
       "escape": true,
       "hidden": false,
+      "hideEmpty": false,
       "history": false,
       "multiple": false,
       "orderNumber": 40,
@@ -107,6 +114,7 @@
       "readOnly": false,
       "required": true,
       "selectSearchable": false,
+      "signed": false,
       "trim": true,
       "unique": false,
       "enums": [
@@ -146,6 +154,7 @@
       "eagerLoading": false,
       "escape": true,
       "hidden": false,
+      "hideEmpty": false,
       "history": false,
       "multiple": false,
       "orderNumber": 50,
@@ -154,6 +163,7 @@
       "readOnly": false,
       "required": true,
       "selectSearchable": false,
+      "signed": false,
       "trim": true,
       "unique": false,
       "rules": [
@@ -180,6 +190,7 @@
       "eagerLoading": false,
       "escape": true,
       "hidden": false,
+      "hideEmpty": false,
       "history": false,
       "multiple": true,
       "onDelete": "null",
@@ -190,6 +201,7 @@
       "readOnly": false,
       "required": false,
       "selectSearchable": false,
+      "signed": false,
       "trim": true,
       "unique": false
     },
@@ -208,6 +220,7 @@
       "eagerLoading": true,
       "escape": true,
       "hidden": false,
+      "hideEmpty": false,
       "history": false,
       "multiple": false,
       "orderNumber": 70,
@@ -217,6 +230,7 @@
       "readOnly": true,
       "required": true,
       "selectSearchable": false,
+      "signed": false,
       "trim": true,
       "unique": false
     },
@@ -236,6 +250,7 @@
       "eagerLoading": true,
       "escape": true,
       "hidden": false,
+      "hideEmpty": false,
       "history": false,
       "multiple": false,
       "onDelete": "null",
@@ -246,6 +261,7 @@
       "readOnly": false,
       "required": false,
       "selectSearchable": false,
+      "signed": false,
       "trim": true,
       "unique": false
     },
@@ -263,6 +279,7 @@
       "eagerLoading": false,
       "escape": true,
       "hidden": false,
+      "hideEmpty": false,
       "history": false,
       "multiple": true,
       "orderNumber": 90,
@@ -273,6 +290,7 @@
       "readOnly": false,
       "required": false,
       "selectSearchable": false,
+      "signed": false,
       "trim": true,
       "unique": false
     },
@@ -290,6 +308,7 @@
       "eagerLoading": false,
       "escape": true,
       "hidden": false,
+      "hideEmpty": false,
       "history": false,
       "multiple": true,
       "onDelete": "cascade",
@@ -301,6 +320,7 @@
       "readOnly": false,
       "required": false,
       "selectSearchable": false,
+      "signed": false,
       "trim": true,
       "unique": false
     },
@@ -331,6 +351,7 @@
         "asHours"
       ],
       "hidden": false,
+      "hideEmpty": false,
       "history": false,
       "multiple": false,
       "orderNumber": 110,
@@ -339,6 +360,7 @@
       "readOnly": true,
       "required": false,
       "selectSearchable": false,
+      "signed": false,
       "trim": true,
       "unique": false
     },
@@ -353,6 +375,7 @@
       "eagerLoading": false,
       "escape": true,
       "hidden": false,
+      "hideEmpty": false,
       "history": false,
       "indexing": 1,
       "multiple": false,
@@ -362,6 +385,7 @@
       "readOnly": true,
       "required": false,
       "selectSearchable": false,
+      "signed": false,
       "trim": true,
       "unique": false
     }
@@ -370,6 +394,7 @@
     {
       "name": "employees",
       "label": "Employees",
+      "loadable": false,
       "orderNumber": 110,
       "readOnly": false,
       "required": false,
@@ -378,6 +403,7 @@
     {
       "name": "assignee",
       "label": "Assignee column",
+      "loadable": false,
       "orderNumber": 1010,
       "parent": "employees",
       "readOnly": false,
@@ -386,6 +412,7 @@
     {
       "name": "author",
       "label": "Author column",
+      "loadable": false,
       "orderNumber": 1020,
       "parent": "employees",
       "readOnly": false,
@@ -394,6 +421,7 @@
     {
       "name": "tabs",
       "label": "Tabs",
+      "loadable": false,
       "orderNumber": 1030,
       "readOnly": false,
       "required": false,
@@ -402,6 +430,7 @@
     {
       "name": "documents",
       "label": "Documents",
+      "loadable": false,
       "orderNumber": 1040,
       "parent": "tabs",
       "readOnly": false,
@@ -411,6 +440,7 @@
       "active": true,
       "name": "comments",
       "label": "Comments",
+      "loadable": false,
       "orderNumber": 1050,
       "parent": "tabs",
       "readOnly": false,
@@ -419,6 +449,7 @@
     {
       "name": "workLog",
       "label": "Work log",
+      "loadable": false,
       "orderNumber": 1060,
       "parent": "tabs",
       "readOnly": false,
@@ -466,8 +497,8 @@
       ],
       "finalState": "inProgress",
       "condition": [
-        "NOT EMPTY",
-        "assignee"
+        "$notEmpty",
+        ".assignee"
       ],
       "orderNumber": 10
     },
