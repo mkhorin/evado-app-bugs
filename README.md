@@ -8,7 +8,7 @@ built on [Evado Declarative Framework](https://github.com/mkhorin/evado).
 - Executor user takes new task to fix errors.
 - Manager checks the work done.
 
-[![Web app built on Evado declarative framework](doc/evado-app.jpg)](http://nervebit.com)
+[![Web app built on Evado declarative framework](doc/evado-app.png)](http://nervebit.com)
 
 ## Docker installation
 
