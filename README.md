@@ -1,12 +1,14 @@
 # Evado Bug Tracking System
 
-A tracking application of reported project defects
+A tracking web application of reported project defects
 built on [Evado Declarative Framework](https://github.com/mkhorin/evado).
 
 - Admin user creates bug tracking projects.
 - Manager user creates tasks describing project defects.
 - Executor user takes new task to fix errors.
 - Manager checks the work done.
+
+[![Web app built on Evado declarative framework](doc/evado-app.jpg)](http://nervebit.com)
 
 ## Docker installation
 
