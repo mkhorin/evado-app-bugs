@@ -12,7 +12,7 @@ built on [Evado Declarative Framework](https://github.com/mkhorin/evado).
 
 ## Docker installation
 
-Clone application to /app
+Clone application to `/app`
 ```sh
 cd /app
 docker-compose up -d mongo
@@ -27,7 +27,7 @@ docker-compose up -d server
 - [MongoDB](https://www.mongodb.com/download-center/community) (version 4)
 
 #### Linux
-Clone application to /app
+Clone application to `/app`
 ```sh
 cd /app
 npm install
@@ -36,7 +36,7 @@ NODE_ENV=development node console/start
 ```
 
 #### Windows
-Clone application to c:/app
+Clone application to `c:/app`
 ```sh
 cd c:/app
 npm install
