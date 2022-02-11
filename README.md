@@ -1,4 +1,4 @@
-# Evado Bug Tracking System
+# Bug Tracking System
 
 A tracking web application of reported project defects
 built on [Evado Declarative Framework](https://github.com/mkhorin/evado).
