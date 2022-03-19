@@ -8,7 +8,7 @@ built on [Evado Declarative Framework](https://github.com/mkhorin/evado).
 - Executor user takes new task to fix errors.
 - Manager checks the work done.
 
-[![Web app built on Evado declarative framework](doc/evado-app.png)](http://nervebit.com)
+[![Web app built on Evado declarative framework](doc/evado-app.png)](https://mkhorin.github.io/evado-site/)
 
 ## Docker installation
 
@@ -66,4 +66,4 @@ Password: 123456
 ```
 
 ## Tutorial
-- [Build an App Without Coding](http://nervebit.com)
+- [Build an App Without Coding](https://mkhorin.github.io/evado-site/)
