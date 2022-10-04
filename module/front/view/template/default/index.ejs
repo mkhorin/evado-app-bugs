@@ -37,6 +37,6 @@ const manager = !guest && user.hasAssignment('manager');
      data-csrf="<%- _controller.getCsrfToken() %>">
 
     <keep-alive include="main-page">
-        <componen :is="activePage" v-bind="activePageProps"></componen>
+        <component :is="activePage" v-bind="activePageProps"></component>
     </keep-alive>
 </div>
