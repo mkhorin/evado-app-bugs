@@ -29,14 +29,14 @@ const manager = !guest && user.hasAssignment('manager');
 <%- include(_view.get('_part/signboard')) %>
 
 <div id="front"
-     data-executor="<%- executor %>"
-     data-manager="<%- manager %>"
-     data-user-id="<%- user.getId() %>"
-     data-auth-url="<%- _url('/auth/sign-in?returnUrl=/front') %>"
-     data-data-url="<%- _url('/api/base/data') %>"
-     data-csrf="<%- _controller.getCsrfToken() %>">
+   data-executor="<%- executor %>"
+   data-manager="<%- manager %>"
+   data-user-id="<%- user.getId() %>"
+   data-auth-url="<%- _url('/auth/sign-in?returnUrl=/front') %>"
+   data-data-url="<%- _url('/api/base/data') %>"
+   data-csrf="<%- _controller.getCsrfToken() %>">
 
-    <keep-alive include="main-page">
-        <component :is="activePage" v-bind="activePageProps"></component>
-    </keep-alive>
+  <keep-alive include="main-page">
+    <component :is="activePage" v-bind="activePageProps"></component>
+  </keep-alive>
 </div>
