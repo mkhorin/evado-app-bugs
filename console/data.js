@@ -14,17 +14,21 @@ const instance = new Console({Application, params});
 
 (async () => {
     switch (params.action) {
-        case 'export':
+        case 'export': {
             await instance.exportData(params);
             break;
-        case 'import':
+        }
+        case 'import': {
             await instance.importData(params);
             break;
-        case 'clear':
+        }
+        case 'clear': {
             await instance.clearData(params);
             break;
-        default:
+        }
+        default: {
             instance.log('error', `Unknown action: ${params.action}`);
+        }
     }
     process.exit();
 })();

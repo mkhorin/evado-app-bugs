@@ -15,21 +15,26 @@ const instance = new Console({Application, params});
 
 (async () => {
     switch (params.action) {
-        case 'install':
+        case 'install': {
             await instance.installAssets(params);
             break;
-        case 'build':
+        }
+        case 'build': {
             await instance.buildAssets(params);
             break;
-        case 'deploy':
+        }
+        case 'deploy': {
             await instance.deployAssets(params);
             break;
-        case 'build-deploy':
+        }
+        case 'build-deploy': {
             await instance.buildAssets(params);
             await instance.deployAssets(params);
             break;
-        default:
+        }
+        default: {
             instance.log('error', `Unknown action: ${params.action}`);
+        }
     }
     process.exit();
 })();
